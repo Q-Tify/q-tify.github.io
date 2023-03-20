@@ -28,23 +28,23 @@
 
     onMount(getImage);
     
-    async function getId() {
+    async function getId() : Promise<number> {
         const res: Response = await fetch(apiUrl+email);
-        let data: number = await res.json();
-        return data;
+        let id: number = await res.json();
+        return id;
     };
 
-    async function getImage() {
+    async function getImage() : Promise<void> {
         let returnedId: number = await getId();
         const res: Response = await fetch(apiImg+returnedId);
-        const data: Joke = await res.json();
+        const jokeJson: Joke = await res.json();
         
         isHidden = false;
         
-        src = data.img;
-        alt = data.alt;
-        title = data.title;
-        date = new Date(Number(data.year), Number(data.month)-1, Number(data.day));
+        src = jokeJson.img;
+        alt = jokeJson.alt;
+        title = jokeJson.title;
+        date = new Date(Number(jokeJson.year), Number(jokeJson.month)-1, Number(jokeJson.day));
     };
 </script>
 

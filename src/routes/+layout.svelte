@@ -12,7 +12,6 @@
 	</main>
 
 	<Footer />
-	
 </div>
 
 <style>
