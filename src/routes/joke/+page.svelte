@@ -5,8 +5,8 @@
 
 
 <svelte:head>
-	<title>Sverdle</title>
-	<meta name="description" content="A Wordle clone written in SvelteKit" />
+	<title>Joke</title>
+	<meta name="description" content="Get a joke" />
 </svelte:head>
 
 <div class="cv-wrapper">
