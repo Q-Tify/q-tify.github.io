@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'GTEestiPro';
+  font-weight: 400;
+  font-display: swap;
+  src: url('//st.ozone.ru/s3/frontend-ozon-ru-public/fonts/GT-Eesti-Pro-Display-Regular.woff')
+    format('woff');
+}
+
+* {
+  font-family: GTEestiPro, arial, sans-serif;
+  letter-spacing: 0.1px;
+}
+
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  position: relative;
+  margin: 0;
+
+  background-color: #eff3f6;
+}
+
+/* Prototype progress container */
+
+.prototype-progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 92px; */
+
+  padding: 20px;
+
+  position: relative;
+
+  background-color: white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (orientation: landscape) {
+  .prototype-progress-container {
+    height: 280px;
+    width: 528px;
+    flex-direction: row;
+  }
+  .controls-container {
+    margin-top: 0px;
+    margin-left: 84px;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .prototype-progress-container {
+    height: 528px;
+    width: 280px;
+    flex-direction: column;
+  }
+  .controls-container {
+    margin-top: 92px;
+    margin-left: 0px;
+  }
+}
+
+.prototype-progress-container__title {
+  top: 20px;
+  left: 20px;
+  position: absolute;
+}
+
+/* Controls block */
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  /* gap: 12px; */
+}
+
+.controls-container__item {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+
+  user-select: none;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.controls-container__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Switch */
+
+.controls-container__switch {
+  flex: 0 0 auto;
+  height: 28px;
+  width: 44px;
+  margin-right: 18px;
+  border-radius: 28px;
+
+  position: relative;
+  background-color: #e0e6ef;
+
+  transition: background-color 0.3s;
+}
+
+.controls-container__switch:before {
+  top: 2px;
+  left: 2px;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  background: #fff;
+
+  transition: transform 0.3s;
+}
+
+.controls-container__item--active .controls-container__switch {
+  background-color: #005bff;
+}
+
+.controls-container__item--active .controls-container__switch:before {
+  transform: translateX(16px);
+}
+
+.controls-container__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Value input */
+
+#Value {
+  box-sizing: border-box;
+  height: 28px;
+  width: 44px;
+  border: 1px inset black;
+  margin-right: 18px;
+  border-radius: 28px;
+
+  padding-block: 0px;
+  padding-inline: 0px;
+
+  font-size: medium;
+  text-align: center;
+  line-height: 28px;
+}
+
+#Value:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Text */
+
+.controls-container__text {
+  height: 28px;
+  width: 72px;
+  line-height: 28px;
+}

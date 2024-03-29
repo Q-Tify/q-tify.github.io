@@ -1,0 +1,18 @@
+.progress-container {
+  width: 120px;
+  height: 120px;
+}
+.progress-ring__circle {
+  transform-origin: center;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset 0.7s;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прототип блока Progress</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+    <script type="module" src="connectComponents.js"></script>
+  </head>
+  <body>
+    <div class="prototype-progress-container">
+      <div class="prototype-progress-container__title">Progress</div>
+
+      <progress-block id="progressBlock" value="75" state="Normal"></progress-block>
+
+      <div class="controls-container">
+        <label class="controls-container__item" for="Value">
+          <input id="Value" type="number" min="0" max="100" value="75" />
+          <div class="controls-container__text">Value</div>
+        </label>
+
+        <label class="controls-container__item" for="Animate">
+          <div class="controls-container__switch"></div>
+          <div class="controls-container__text">Animate</div>
+          <input id="Animate" type="checkbox" class="controls-container__checkbox" />
+        </label>
+
+        <label class="controls-container__item" for="Hide">
+          <div class="controls-container__switch"></div>
+          <div class="controls-container__text">Hide</div>
+          <input id="Hide" type="checkbox" class="controls-container__checkbox" />
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
